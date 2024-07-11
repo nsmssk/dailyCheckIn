@@ -46,6 +46,5 @@ jobs:
         USER_1_TOKEN: ${{ secrets.TOKEN_1 }}
         WEBHOOK_URL: ${{secrets.WEBHOOK_URL}}
       run: 
-        pip install discord-webhook
-        python3 dailyCheckinTest.py
+        dailyCheckinTest.py
       
