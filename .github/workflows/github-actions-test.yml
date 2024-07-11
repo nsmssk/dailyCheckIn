@@ -1,0 +1,43 @@
+name: Daily Check In Task
+
+on:
+  # Allow manual start
+  workflow_dispatch:
+  # Run job on 16:15UTC/00:15CST daily
+  schedule:
+  - cron: "15 16 * * *"
+  
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    #- uses: actions/checkout@v3
+    #- name: Set up JDK 17
+     # uses: actions/setup-java@v3
+      #with:
+       # java-version: '17'
+        #distribution: 'temurin'
+    #- name: Make Gradle wrapper executable
+     # run: chmod +x ./gradlew
+    #- name: Build with Gradle
+     # uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      #with:
+       # arguments: build test
+    -  name: runaction
+       with:
+         python-version: '3.10'
+       env:
+        USER_1_ID: ${{ secrets.TOKEN_ID_1 }}
+        USER_1_TOKEN: ${{ secrets.TOKEN_1 }}
+        USER_2_ID: ${{ secrets.TOKEN_ID_LUCI }}
+        USER_2_TOKEN: ${{ secrets.TOKEN_LUCI }}
+        USER_3_ID: ${{ secrets.TOKEN_ID_SAI }}
+        USER_3_TOKEN: ${{ secrets.TOKEN_SAI }}
+        USER_4_ID: ${{ secrets.TOKEN_ID_MSA }}
+        USER_4_TOKEN: ${{ secrets.TOKEN_MSA }}
+        WEBHOOK_URL: ${{secrets.WEBHOOK_URL}}
