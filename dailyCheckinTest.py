@@ -41,7 +41,7 @@ def checkin(game_name,ltoken_v2,ltuid_v2):
     for i in range(len(listAccountName)):
         if str(listAccountName[i].get('game_biz'))==gameBiz and int(listAccountName[i].get('level'))>level:
             accountName=listAccountName[i].get('nickname')
-
+            level=listAccountName[i].get('level')
     discord = Discord(url="https://discord.com/api/webhooks/1260432062570168413/dll1sbVkfT_aC5Hp59avYjoSKuLc0xEc3jASrLXvQKDDiUK2oBxkat7euChekdTUEMFK")
     discord.post(
         embeds=[{
