@@ -1,8 +1,6 @@
 import re
 import requests
 from datetime import datetime
-import schedule
-import random
 import json
 import os
 from discordwebhook import Discord
