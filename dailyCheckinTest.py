@@ -4,6 +4,7 @@ from datetime import datetime
 import schedule
 import random
 import json
+import os
 from discordwebhook import Discord
 def checkin(game_name,ltoken_v2,ltuid_v2):
     url_zzz="https://sg-act-nap-api.hoyolab.com/event/luna/os/sign"
