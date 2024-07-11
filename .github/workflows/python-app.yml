@@ -44,6 +44,12 @@ jobs:
       env:  
         USER_1_ID: ${{ secrets.TOKEN_ID_1 }}
         USER_1_TOKEN: ${{ secrets.TOKEN_1 }}
+        USER_2_ID: ${{ secrets.TOKEN_ID_LUCI }}
+        USER_2_TOKEN: ${{ secrets.TOKEN_LUCI }}
+        USER_3_ID: ${{ secrets.TOKEN_ID_SAI }}
+        USER_3_TOKEN: ${{ secrets.TOKEN_SAI }}
+        USER_4_ID: ${{ secrets.TOKEN_ID_MSA }}
+        USER_4_TOKEN: ${{ secrets.TOKEN_MSA }}
         WEBHOOK_URL: ${{secrets.WEBHOOK_URL}}
       run: 
         python dailyCheckinTest.py
