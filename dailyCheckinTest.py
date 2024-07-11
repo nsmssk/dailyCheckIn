@@ -55,5 +55,6 @@ def checkin(game_name,ltoken_v2,ltuid_v2):
             #"timestamp":datetime.now().strftime("%H:%M:%S"),
             }],
         )
-    
+ltoken_v2=System.getenv("USER_1_TOKEN")
+luid_v2=System.getenv("USER_1_UID")
 checkin('zzz',ltoken_v2,luid_v2)    
