@@ -46,5 +46,5 @@ jobs:
         USER_1_TOKEN: ${{ secrets.TOKEN_1 }}
         WEBHOOK_URL: ${{secrets.WEBHOOK_URL}}
       run: 
-        dailyCheckinTest.py
+        python dailyCheckinTest.py
       
