@@ -12,20 +12,25 @@ def checkin(game_name,ltoken_v2,ltuid_v2):
     url_userInfo="https://api-account-os.hoyoverse.com/binding/api/getUserGameRolesByLtoken"
     headers={'Content-type':'application/json'}
     cookies={'ltoken_v2':str(ltoken_v2),'ltuid_v2':str(ltuid_v2)}
+    act_id=''
     #game_name='zzz'
     if game_name=='hi3':
         url_checkin=url_hi3
         gameBiz='bh3_global'
+        act_id="e202110291205111"
     elif game_name=='gi':
         url_checkin=url_gi
         gameBiz='hk4e_global'
+        act_id="e202102251931481"
     elif game_name=='hsr':
         url_checkin=url_hsr
         gameBiz='hkrpg_global'
+        act_id="e202303301540311"
     elif game_name=='zzz':
         url_checkin=url_zzz
         gameBiz='nap_global'
-    r=requests.post(url_checkin,cookies=cookies,headers=headers,json={"act_id":"e202406031448091"} )
+        act_id="e202406031448091"
+    r=requests.post(url_checkin,cookies=cookies,headers=headers,json={"act_id":str(act_id)} )
     data=r.json()
     print(data)
     response_message=data.get('message')
@@ -49,7 +54,8 @@ def checkin(game_name,ltoken_v2,ltuid_v2):
             "title":"Daily check in task ["+accountName+"]",
             "description":str(response_message),
             "fields":[
-                {"name":"Game","value":"ZZZ"},
+                {"name":"Game","value":str(game_name)},
+                {"name":"Time","value":str(datetime.now())},
                 ],
             #"timestamp":datetime.now().strftime("%H:%M:%S"),
             }],
